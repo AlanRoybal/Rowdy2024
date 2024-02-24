@@ -1,17 +1,33 @@
+// src/index.js
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import ShelterFinder from './ShelterFinder';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const App = () => {
+  return (
+    <div>
+      <header>
+        <h1>Local Weather Station</h1>
+      </header>
+      <main>
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <video width="640" height="360" controls>
+            <source src="your_video_file.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <ShelterFinder backgroundColor="#f0f0f0" textColor="#333" />
+      </main>
+      <footer>
+        <p>&copy; 2024 Local Weather Station</p>
+      </footer>
+    </div>
+  );
+};
+
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
